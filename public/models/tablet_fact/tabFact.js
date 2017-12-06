@@ -1,7 +1,7 @@
 app.factory("tabfactory", function ($http, $q) {
     var getJSON = function () {
         var pr = $q.defer();
-        $http.get("http://localhost:7777/tablets").then(function (data) {
+        $http.get("https://shopping-cart-bhavya.herokuapp.com/tablets").then(function (data) {
             console.log("Success data");
             pr.resolve(data);
         }, function (er) {

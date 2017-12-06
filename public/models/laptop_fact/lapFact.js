@@ -1,7 +1,7 @@
 app.factory("lapfactory", function ($http, $q) {
     var getJSON = function () {
         var pro = $q.defer();
-        $http.get("http://localhost:7777/laptops").then(function (data) {
+        $http.get("https://shopping-cart-bhavya.herokuapp.com/laptops").then(function (data) {
             console.log("Success");
             pro.resolve(data);
         }, function (er) {

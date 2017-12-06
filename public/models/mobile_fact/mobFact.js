@@ -2,7 +2,7 @@ app.factory("mobFactory", function ($http, $q) {
         var getJSON=function () {
         var defered = $q.defer();
         console.log("Calling JSON");
-        $http.get("http://localhost:7777/mobiles").then(function (data) {
+        $http.get("https://shopping-cart-bhavya.herokuapp.com/mobiles").then(function (data) {
             console.log("Inside success"+data.data);
             defered.resolve(data);
         }, function (er) {
