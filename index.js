@@ -111,7 +111,7 @@ console.log("calling mobile")
 })
 
 
-
-                             app.listen(7777,function(){
-    console.log("Server start");
+app.listen(process.env.PORT || 5000, function() {
+    console.log("Server started.......");
+});
 })
