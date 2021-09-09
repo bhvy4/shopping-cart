@@ -1,9 +1,7 @@
 app.factory("lapfactory", function ($http, $q) {
     var getJSON = function () {
         var pro = $q.defer();
-       // $http.get("http://localhost:5000/laptops").then(function (data) {
-                    $http.get("https://shopping-cart-bhavya.herokuapp.com/laptops").then(function (data) {
-            console.log("Success");
+        $http.get("https://shopping-cart-bhavya.herokuapp.com/laptops").then(function (data) {
             pro.resolve(data);
         }, function (er) {
             pro.reject(er);
@@ -15,14 +13,14 @@ app.factory("lapfactory", function ($http, $q) {
         this.image = image;
         this.price = price;
         this.rem = false;
-        this.add=[];
+        this.add = [];
     }
-    var buyProd=function(name,image,address){
-            this.product=name;
-            this.image=image;
-            this.address=address;
-        }
+    var buyProd = function (name, image, address) {
+        this.product = name;
+        this.image = image;
+        this.address = address;
+    }
     return {
-        "getjson": getJSON,"Cart":addToCart,"Buy":buyProd
+        "getjson": getJSON, "Cart": addToCart, "Buy": buyProd
     };
 });

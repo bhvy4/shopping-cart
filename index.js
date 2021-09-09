@@ -12,57 +12,39 @@ app.get('/tablets', function (req, res) {
     const abc = require("./db/tabletsschema.js")
     abc.find(function (error, docs) {
         if (error) {
-            console.log("some problem")
             response.send('Some Problem in my Connection');
         } else {
-            console.log("calling tablet")
-            //console.log("docsis",docs);
+
             res.send(JSON.stringify(docs));
 
         }
     })
-    //}
 })
 
-//});
-
 app.get('/laptops', function (req, res) {
-        res.setHeader('Content-Type', 'application/json');
-        const lap = require("./db/laptopsschema.js")
-        lap.find(function (error, docs) {
-            if (error) {
-                console.log("some problem")
-                response.send('Some Problem in my Connection');
-            } else {
-                console.log("calling laptop")
-                // console.log("docsis",docs);
-                res.send(JSON.stringify(docs));
-
-            }
-        })
-    }
-    //}
+    res.setHeader('Content-Type', 'application/json');
+    const lap = require("./db/laptopsschema.js")
+    lap.find(function (error, docs) {
+        if (error) {
+            response.send('Some Problem in my Connection');
+        } else {
+            res.send(JSON.stringify(docs));
+        }
+    })
+}
 )
-//})
 
 
 app.get('/mobiles', function (req, res) {
     res.setHeader('Content-Type', 'application/json');
-    console.log("calling mobile")
-    const mobile = require("./db/mobilesschema.js")       
+    const mobile = require("./db/mobilesschema.js")
     mobile.find(function (error, docs) {
         if (error) {
-            console.log("some problem")
             response.send('Some Problem in my Connection');
         } else {
-            console.log("calling mobile")
-            //console.log("docsis",docs);
             res.send(JSON.stringify(docs));
-
         }
     })
-    //}
-    //      })
 })
 
 
