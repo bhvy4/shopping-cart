@@ -7,8 +7,6 @@ var xyz= new Schema({name:String,image:String,price:String,highlights:[String,St
 var userSchema = mongoose.model('tablets',xyz)
 
 
-//var User = mongoose.model("xyz",userSchema);
-//console.log("schema is ",userSchema)
 
 
 
